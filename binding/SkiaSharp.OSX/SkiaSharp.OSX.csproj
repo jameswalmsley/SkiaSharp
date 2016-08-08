@@ -64,8 +64,8 @@
     <None Include="SkiaSharp.OSX.targets">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="..\..\native-builds\lib\osx\libSkiaSharp.dylib">
-      <Link>libSkiaSharp.dylib</Link>
+    <None Include="..\..\native-builds\lib\src\libSkiaSharp.so">
+      <Link>libSkiaSharp.so</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

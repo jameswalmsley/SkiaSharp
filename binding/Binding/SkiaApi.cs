@@ -54,7 +54,7 @@ namespace SkiaSharp
 #elif __ANDROID__
 		private const string SKIA = "libSkiaSharp.so";
 #elif XAMARIN_MAC
-		private const string SKIA = "libSkiaSharp.dylib";
+		private const string SKIA = "libSkiaSharp.dll";
 #elif DESKTOP
 		private const string SKIA = "libSkiaSharp.dll"; // redirected using .dll.config to 'libSkiaSharp.dylib' on OS X
 #elif WINDOWS_UWP
@@ -408,7 +408,7 @@ namespace SkiaSharp
 		public extern static float sk_path_rawiter_conic_weight (sk_path_iterator_t iterator);
 		[DllImport (SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static void sk_path_rawiter_destroy (sk_path_t path);
-							       
+
 		// SkMaskFilter
 		[DllImport (SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static void sk_maskfilter_unref(sk_maskfilter_t t);
@@ -807,7 +807,7 @@ namespace SkiaSharp
 		public extern static void sk_bitmap_destructor(sk_bitmap_t b);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static void sk_bitmap_get_info(sk_bitmap_t b, out SKImageInfo info);
-		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)] 
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static IntPtr sk_bitmap_get_pixels(sk_bitmap_t b, out IntPtr length);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static void sk_bitmap_get_pixel_colors(sk_bitmap_t b, [Out] SKColor[] colors);
@@ -879,8 +879,8 @@ namespace SkiaSharp
 
 		// Path Effect
 
-		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]  
-		public extern static void sk_path_effect_unref (sk_path_effect_t effect); 
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
+		public extern static void sk_path_effect_unref (sk_path_effect_t effect);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static sk_path_effect_t sk_path_effect_create_compose(sk_path_effect_t outer, sk_path_effect_t inner);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
@@ -912,4 +912,3 @@ namespace SkiaSharp
 		public extern static void sk_colortable_read_colors (sk_colortable_t ctable, out IntPtr colors);
 	}
 }
-

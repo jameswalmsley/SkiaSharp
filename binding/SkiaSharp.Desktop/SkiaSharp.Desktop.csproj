@@ -74,8 +74,8 @@
     </None>
   </ItemGroup>
   <ItemGroup Condition=" '$(OS)' == 'Unix' ">
-    <None Include="..\..\native-builds\lib\osx\libSkiaSharp.dylib">
-      <Link>mac\libSkiaSharp.dylib</Link>
+    <None Include="..\..\native-builds\src\libSkiaSharp.so">
+      <Link>mac\libSkiaSharp.so</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -91,7 +91,7 @@
   </ItemGroup>
   <Import Project="..\Binding\Binding.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

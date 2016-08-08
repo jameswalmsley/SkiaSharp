@@ -69,10 +69,11 @@ void dDestroy(size_t managedStream)
     gDestroy(managedStream);
 }
 
-
+extern "C" {
 sk_stream_managedstream_t* sk_managedstream_new ()
 {
     return (sk_stream_managedstream_t*)new SkManagedStream();
+}
 }
 
 void sk_managedstream_set_delegates (const sk_managedstream_read_delegate pRead,
@@ -99,4 +100,3 @@ void sk_managedstream_set_delegates (const sk_managedstream_read_delegate pRead,
 
     SkManagedStream::setDelegates(dRead, dPeek, dIsAtEnd, dRewind, dGetPosition, dSeek, dMove, dGetLength, dCreateNew, dDestroy);
 }
-

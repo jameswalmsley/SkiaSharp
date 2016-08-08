@@ -23,16 +23,16 @@
     </ItemGroup>
 
     <!-- make sure Windows is x86 or x64 -->
-    <Target Condition=" '$(ShouldIncludeNativeSkiaSharp)' != 'False' and '$(Platform)' != 'x64' and '$(Platform)' != 'x86' and '$(OS)' != 'Unix' " 
-            Name="CheckSkiaPlatforms" 
+    <Target Condition=" '$(ShouldIncludeNativeSkiaSharp)' != 'False' and '$(Platform)' != 'x64' and '$(Platform)' != 'x86' and '$(OS)' != 'Unix' "
+            Name="CheckSkiaPlatforms"
             BeforeTargets="Build">
         <Error Text="The Platform needs to be either x64 or x86 to support Skia in Windows." />
     </Target>
 
     <!-- add the native OSX library -->
     <ItemGroup Condition=" '$(ShouldIncludeNativeSkiaSharp)' != 'False' and '$(OS)' == 'Unix' ">
-        <None Include="$(MSBuildThisFileDirectory)mac\libSkiaSharp.dylib">
-            <Link>libSkiaSharp.dylib</Link>
+        <None Include="$(MSBuildThisFileDirectory)mac\libSkiaSharp.so">
+            <Link>libSkiaSharp.so</Link>
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Include="$(MSBuildThisFileDirectory)SkiaSharp.dll.config">
